@@ -1,7 +1,7 @@
 // src/Navbar.js
 import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import Logo from './assets/fun-robot.png';
+import Logo from './assets/robot_logo_simple.png';
 
 const MyNavbar = ({ projects }) => {
   return (
