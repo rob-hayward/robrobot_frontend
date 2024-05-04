@@ -4,7 +4,7 @@ import axios from 'axios';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyNavbar from './Navbar';
-import LogoImage from './assets/robot_logo_simple.png';
+import LogoImage from './assets/robrobot_logo_half.png';
 import Profile from './Profile';
 import Projects from './Projects';
 import Contact from './Contact';
@@ -25,7 +25,7 @@ function App() {
       <MyNavbar projects={projects} />
 
       <div className="logo-section text-center mt-5">
-        <img src={LogoImage} alt="Logo" style={{ maxWidth: '200px', height: 'auto' }} />
+        <img src={LogoImage} alt="Logo"/>
       </div>
 
       <div className="container mt-5">
