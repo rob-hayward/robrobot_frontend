@@ -1,0 +1,121 @@
+.navbar {
+  background-color: rgb(30, 31, 34);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2em 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 5em;
+}
+
+.navbar-name-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.navbar-name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  font-size: 40px;
+  color: white;
+  margin-top: 40px;
+  margin-bottom: -30px;
+}
+
+.navbar-subtitle {
+  font-family: monospace;
+  font-size: 14px;
+  margin-left: 0;
+  align-items: flex-end;
+}
+
+.navbar-subtitle span:nth-child(1) {
+  color: rgb(139, 88, 138); /* Pink */
+}
+
+.navbar-subtitle span:nth-child(2) {
+  color: rgb(197, 145, 114); /* Orange */
+}
+
+.navbar-subtitle span:nth-child(3) {
+  color: rgb(107, 166, 239); /* Blue */
+}
+
+.navbar-nav {
+  margin-top: 87px;
+  margin-left: auto;
+  margin-right: 4em;
+  align-items: flex-end;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-brand {
+  flex: 1;
+  text-align: center;
+}
+
+.navbar-nav {
+  flex: 1;
+  justify-content: flex-end;
+  display: flex;
+}
+
+.navbar-toggle {
+  border: none;
+  align-self: center;
+}
+
+.navbar-nav .nav-link {
+  font-family: monospace;
+  font-size: 14px;
+  margin-left: 15px;
+  color: rgb(117, 163, 116); /* Green color for navbar options */
+}
+
+.navbar-nav .nav-link:hover {
+  color: rgb(197, 175, 122); /* Yellow color on hover */
+}
+
+.navbar-nav .nav-dropdown .dropdown-toggle,
+.navbar-nav .nav-dropdown .dropdown-toggle:focus {
+  font-family: monospace;
+  font-size: 14px;
+  margin-left: 15px;
+  color: rgb(117, 163, 116); /* Green color for the "Projects" dropdown */
+}
+
+.navbar-nav .nav-dropdown .dropdown-toggle:hover {
+  color: rgb(197, 175, 122); /* Yellow color on hover */
+}
+
+.navbar-nav .nav-dropdown .dropdown-menu {
+  background-color: rgb(43, 45, 48); /* Set the background color of the dropdown menu */
+}
+
+.navbar-nav .nav-dropdown .dropdown-menu .dropdown-item {
+  font-family: monospace;
+  font-size: 14px;
+  color: rgb(117, 163, 116); /* Green color for dropdown items */
+}
+
+.navbar-nav .nav-dropdown .dropdown-menu .dropdown-item:hover {
+  color: rgb(197, 175, 122); /* Yellow color on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background color on hover */
+}

@@ -1,0 +1,32 @@
+/* Intro.css */
+
+.intro-section {
+  text-align: left;
+  font-size: 2.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: white;
+}
+
+.intro-section p {
+  margin-bottom: 10px;
+}
+
+.intro-section .plus-sign {
+  color: rgb(197, 145, 114);
+}
+
+.intro-section .organised,
+.intro-section .passionate {
+  color: rgb(139, 88, 138);
+}
+
+.intro-section .efficient,
+.intro-section .relentless {
+  color: rgb(107, 166, 239);
+}
+
+.intro-section .make-it-work {
+  font-style: italic;
+  color: rgb(120, 170, 120);
+}

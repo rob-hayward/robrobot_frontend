@@ -1,13 +1,15 @@
-// src/App.js
+// App.js
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import './Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyNavbar from './Navbar';
-import LogoImage from './assets/robrobot_logo_half.png';
-import Profile from './Profile';
-import Projects from './Projects';
-import Contact from './Contact';
+import Intro from './Intro';
+import ProjectGrid from './ProjectGrid';
+import ProjectDetail from './ProjectDetail';
+import AboutContact from './AboutContact';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -21,23 +23,28 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <MyNavbar projects={projects} />
+    <Router>
+      <div className="App">
+        <MyNavbar projects={projects} />
 
-      <div className="logo-section text-center mt-5">
-        <img src={LogoImage} alt="Logo"/>
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={
+              <>
+                <div className="container mt-5">
+                  <Intro />
+                </div>
+                <div className="container my-5">
+                  <ProjectGrid projects={projects} />
+                </div>
+              </>
+            } />
+            <Route path="/projects/:id" element={<ProjectDetail projects={projects} />} />
+            <Route path="/about" element={<AboutContact />} />
+          </Routes>
+        </div>
       </div>
-
-      <div className="container mt-5">
-        <Profile id="about" />
-      </div>
-      <div className="container my-5">
-        <Projects projects={projects} />
-      </div>
-      <div className="container my-5">
-        <Contact id="contact" />
-      </div>
-    </div>
+    </Router>
   );
 }
 

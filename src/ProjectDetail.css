@@ -1,0 +1,36 @@
+/* ProjectDetail.css */
+
+.project-detail {
+  margin-top: 100px;
+  color: white;
+}
+
+.project-detail h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.project-detail .project-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.project-detail .project-images img {
+  width: 300px;
+  height: auto;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.project-detail .project-section {
+  margin-bottom: 30px;
+  color: white;
+}
+
+.project-detail .project-section p {
+  margin-bottom: 10px;
+  color: white;
+}
