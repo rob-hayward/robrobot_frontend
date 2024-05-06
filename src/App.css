@@ -1,7 +1,7 @@
 /* App.css */
 
 .main-content {
-  margin-top: 12rem;
+  margin-top: 10rem;
 }
 
 body {
@@ -27,10 +27,6 @@ body {
   padding: 2rem 0;
   background: rgb(30, 31, 34);
   margin-bottom: 2rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.5rem;
-  border: 1px solid rgb(200, 200, 200);
-  color: white;
 }
 
 .project-images {
@@ -162,11 +158,19 @@ body {
   color: white;
 }
 
+/* Project Grid Container */
+.project-grid-container {
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 0 3em;
+}
+
 /* Project Grid */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+  gap: 4em;
+  margin-top: -2em;
 }
 
 .project-item {
