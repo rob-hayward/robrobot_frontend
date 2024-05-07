@@ -5,7 +5,6 @@ import ImageModal from './ImageModal';
 import './App.css';
 import './ProjectDetail.css';
 
-
 const ProjectDetail = ({ projects }) => {
   const { id } = useParams();
   const project = projects.find((project) => project.id === parseInt(id));
@@ -36,46 +35,68 @@ const ProjectDetail = ({ projects }) => {
 
   return (
     <div className="project-detail">
-      <h1>{project.title}</h1>
-      <div className="project-images">
-        {project.images.map((image, index) => {
-          const imagePath = require(`./assets/images/${project.title.toLowerCase()}/${image.image.split('/').pop()}`);
-          return (
-            <img
-              key={index}
-              src={imagePath}
-              alt={`${project.title} - ${index + 1}`}
-              onClick={() => openImageModal(index)}
-            />
-          );
-        })}
-      </div>
-      <div className="project-section">
-        <p><strong>Overview:</strong></p>
-        <div dangerouslySetInnerHTML={{ __html: project.overview }} />
-        <p><strong>Key Features:</strong></p>
-        <div dangerouslySetInnerHTML={{ __html: project.key_features }} />
-        <p><strong>Technical Stack:</strong></p>
-        <div dangerouslySetInnerHTML={{ __html: project.technical_stack }} />
-        <p><strong>Role and Contribution:</strong></p>
-        <div dangerouslySetInnerHTML={{ __html: project.role_and_contribution }} />
-        <p><strong>Challenges and Solutions:</strong></p>
-        <div dangerouslySetInnerHTML={{ __html: project.challenges_solutions }} />
-        <p><strong>Future Plans:</strong></p>
-        <div dangerouslySetInnerHTML={{ __html: project.future_plans }} />
-        {project.web_link && (
-          <p>
-            <strong>Web Link:</strong> <a href={project.web_link}>{project.web_link}</a>
-          </p>
-        )}
-        {project.git_repo_links.map((repo, index) => (
-          <p key={index}>
-            <strong>Git Repository {index + 1}:</strong>{' '}
-            <a href={repo.url} target="_blank" rel="noopener noreferrer">
-              {repo.name}
-            </a>
-          </p>
-        ))}
+      <div className="project-detail-container">
+        <h1>{project.title}</h1>
+        <div className="project-detail-grid">
+          <div className="project-detail-section">
+            <p className="project-detail-subtitle">Overview</p>
+            <div dangerouslySetInnerHTML={{ __html: project.overview }} />
+          </div>
+          <img
+            className="project-detail-image"
+            src={require(`./assets/images/${project.title.toLowerCase()}/${project.images[0].image.split('/').pop()}`)}
+            alt={`${project.title} - 1`}
+            onClick={() => openImageModal(0)}
+          />
+          <img
+            className="project-detail-image"
+            src={require(`./assets/images/${project.title.toLowerCase()}/${project.images[1].image.split('/').pop()}`)}
+            alt={`${project.title} - 2`}
+            onClick={() => openImageModal(1)}
+          />
+          <div className="project-detail-section">
+            <p className="project-detail-subtitle">Key Features</p>
+            <div dangerouslySetInnerHTML={{ __html: project.key_features }} />
+          </div>
+          <div className="project-detail-section">
+            <p className="project-detail-subtitle">Technical Stack</p>
+            <div dangerouslySetInnerHTML={{ __html: project.technical_stack }} />
+          </div>
+          <img
+            className="project-detail-image"
+            src={require(`./assets/images/${project.title.toLowerCase()}/${project.images[2].image.split('/').pop()}`)}
+            alt={`${project.title} - 3`}
+            onClick={() => openImageModal(2)}
+          />
+          <img
+            className="project-detail-image"
+            src={require(`./assets/images/${project.title.toLowerCase()}/${project.images[3].image.split('/').pop()}`)}
+            alt={`${project.title} - 4`}
+            onClick={() => openImageModal(3)}
+          />
+          <div className="project-detail-section">
+            <p className="project-detail-subtitle">Challenges and Solutions</p>
+            <div dangerouslySetInnerHTML={{ __html: project.challenges_solutions }} />
+          </div>
+        </div>
+        <div className="project-detail-section">
+          <p className="project-detail-subtitle">Role and Contribution</p>
+          <div dangerouslySetInnerHTML={{ __html: project.role_and_contribution }} />
+        </div>
+        <div className="project-detail-section">
+          <p className="project-detail-subtitle">Future Plans</p>
+          <div dangerouslySetInnerHTML={{ __html: project.future_plans }} />
+        </div>
+        <div className="project-detail-section git-repository-section">
+          {project.git_repo_links.map((repo, index) => (
+            <p key={index}>
+              <strong>Git Repository {index + 1}:</strong>{' '}
+              <a href={repo.url} target="_blank" rel="noopener noreferrer">
+                {repo.name}
+              </a>
+            </p>
+          ))}
+        </div>
       </div>
       {selectedImageIndex !== null && (
         <ImageModal

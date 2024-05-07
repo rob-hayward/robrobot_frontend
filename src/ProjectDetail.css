@@ -1,36 +1,70 @@
 /* ProjectDetail.css */
 
 .project-detail {
-  margin-top: 100px;
+  margin-top: 5em;
   color: white;
+}
+
+.project-detail-container {
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 0 3em;
 }
 
 .project-detail h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  padding-top: 1em;
+  margin-bottom: 1em;
   color: white;
+  text-align: center;
 }
 
-.project-detail .project-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 30px;
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
 }
 
-.project-detail .project-images img {
-  width: 300px;
+.project-detail-image {
+  width: 100%;
   height: auto;
-  margin: 10px;
   cursor: pointer;
+  transition: transform 0.3s;
 }
 
-.project-detail .project-section {
+.project-detail-image:hover {
+  transform: scale(1.05);
+}
+
+.project-detail-section {
   margin-bottom: 30px;
   color: white;
+  text-align: left;
 }
 
-.project-detail .project-section p {
+.project-detail-section p {
   margin-bottom: 10px;
   color: white;
 }
+
+.project-detail-subtitle {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.project-detail-section:last-child {
+  text-align: center;
+}
+
+/*!* Add the following CSS rules to shift the rows *!*/
+
+/*.project-detail-grid > *:nth-child(4n + 1),*/
+/*.project-detail-grid > *:nth-child(4n + 2) {*/
+/*  transform: translateX(-1em);*/
+/*}*/
+
+/*.project-detail-grid > *:nth-child(4n + 3),*/
+/*.project-detail-grid > *:nth-child(4n + 4) {*/
+/*  transform: translateX(1em);*/
+/*}*/

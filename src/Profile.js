@@ -8,7 +8,6 @@ const Profile = () => {
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/profiles/')
             .then(response => {
-                // Assuming there's only one profile, we take the first one
                 if (response.data.length > 0) {
                     setProfile(response.data[0]);
                 }

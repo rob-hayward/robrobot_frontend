@@ -1,0 +1,52 @@
+/* AboutContact.css */
+
+.about-contact-container {
+    max-width: 70em;
+    margin: 0 auto;
+    padding: 3em;
+    color: white;
+}
+
+.about-contact-container h1 {
+    font-size: 3rem;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.about-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+}
+
+.profile-section,
+.contact-section {
+    text-align: left;
+}
+
+.contact-section h2 {
+    margin-bottom: 1em;
+}
+
+.contact-section form {
+    display: grid;
+    grid-gap: 1em;
+}
+
+.contact-section label {
+    font-weight: bold;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 0.5em;
+}
+
+.contact-section button {
+    padding: 0.5em 1em;
+}
+
+.contact-info {
+    margin-top: 2em;
+}
