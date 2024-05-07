@@ -6,25 +6,32 @@ const Contact = () => {
         <div className="contact-section">
             <h2>Contact Me</h2>
             <form>
-                <div>
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" id="name" name="name" required />
+                <div className="form-row">
+                    <div>
+                        <label htmlFor="firstName">first name</label>
+                        <input type="text" id="firstName" name="firstName" required />
+                    </div>
+                    <div>
+                        <label htmlFor="lastName">last name</label>
+                        <input type="text" id="lastName" name="lastName" required />
+                    </div>
+                </div>
+                <div className="form-row">
+                    <div>
+                        <label htmlFor="email">email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div>
+                        <label htmlFor="phone">phone</label>
+                        <input type="tel" id="phone" name="phone" />
+                    </div>
                 </div>
                 <div>
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" required />
-                </div>
-                <div>
-                    <label htmlFor="message">Message:</label>
+                    <label htmlFor="message">message</label>
                     <textarea id="message" name="message" required></textarea>
                 </div>
-                <button type="submit">Send</button>
+                <button type="submit">send</button>
             </form>
-            <div className="contact-info">
-                <p>Feel free to reach out to me via email or connect with me on LinkedIn.</p>
-                <p>Email: hayward.m.rob@gmail.com</p>
-                <p>GitHub: <a href="https://github.com/rob-hayward" target="_blank" rel="noopener noreferrer">https://github.com/rob-hayward</a></p>
-            </div>
         </div>
     );
 };

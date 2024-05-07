@@ -9,14 +9,14 @@
 
 .about-contact-container h1 {
     font-size: 3rem;
-    margin-bottom: 1em;
-    text-align: center;
+    margin-bottom: 0.5em;
+    text-align: left;
 }
 
 .about-contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 2em;
+    grid-gap: 3em;
 }
 
 .profile-section,
@@ -26,25 +26,53 @@
 
 .contact-section h2 {
     margin-bottom: 1em;
+    text-align: center;
+    font-family: monospace;
+    color: rgb(117, 163, 116);
 }
 
 .contact-section form {
     display: grid;
     grid-gap: 1em;
+    font-family: monospace;
+    color: rgb(117, 163, 116);
 }
 
-.contact-section label {
-    font-weight: bold;
+.contact-section .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
 }
 
 .contact-section input,
 .contact-section textarea {
     width: 100%;
     padding: 0.5em;
+    background-color: rgb(43, 45, 48);
+    color: white;
+    border: none;
+}
+
+.contact-section textarea {
+    resize: vertical;
+    min-height: 150px;
 }
 
 .contact-section button {
-    padding: 0.5em 1em;
+    padding: 0.6em 1.2em;
+    background-color: rgb(43, 45, 48);
+    color: rgb(117, 163, 116);
+    border: none;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 1em;
+    transition: color 0.3s;
+    width: 120px;
+    justify-self: center;
+}
+
+.contact-section button:hover {
+    color: rgb(197, 175, 122);
 }
 
 .contact-info {

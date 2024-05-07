@@ -10,6 +10,7 @@ import Intro from './Intro';
 import ProjectGrid from './ProjectGrid';
 import ProjectDetail from './ProjectDetail';
 import AboutContact from './AboutContact';
+import Footer from './Footer';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -43,6 +44,7 @@ function App() {
             <Route path="/about" element={<AboutContact />} />
           </Routes>
         </div>
+        <Footer />
       </div>
     </Router>
   );

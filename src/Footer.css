@@ -1,0 +1,40 @@
+/* src/Footer.css */
+.footer {
+  margin-top: 1em;
+  background-color: rgb(30, 31, 34);
+  padding: 1rem 0;
+  text-align: center;
+  color: white;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lets-chat-link {
+  color: rgb(117, 163, 116);
+  font-family: monospace;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.lets-chat-link:hover {
+  color: rgb(197, 175, 122);
+}
+
+.social-links {
+  display: flex;
+}
+
+.social-icon {
+  color: rgb(117, 163, 116);
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: rgb(197, 175, 122);
+}

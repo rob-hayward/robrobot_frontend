@@ -57,6 +57,16 @@
   text-align: center;
 }
 
+.git-repository-section a {
+  color: rgb(117, 163, 116);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.git-repository-section a:hover {
+  color: rgb(197, 175, 122);
+}
+
 /*!* Add the following CSS rules to shift the rows *!*/
 
 /*.project-detail-grid > *:nth-child(4n + 1),*/
