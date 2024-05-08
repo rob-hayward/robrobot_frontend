@@ -2,6 +2,7 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Logo from './assets/robrobot_logo.png';
 
 const MyNavbar = ({ projects }) => {
   return (
@@ -16,6 +17,9 @@ const MyNavbar = ({ projects }) => {
             </span>
           </div>
         </Navbar.Brand>
+        <div className="navbar-logo">
+          <img src={Logo} alt="Logo" />
+        </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navbar-nav ml-auto">
