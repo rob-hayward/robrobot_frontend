@@ -1,13 +1,14 @@
 // Intro.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import config from './config';
 import './Intro.css';
 
 const Intro = () => {
   const [profile, setProfile] = useState({});
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/profiles/')
+    axios.get(`${config.API_BASE_URL}/profiles/`)
       .then(response => {
         if (response.data.length > 0) {
           setProfile(response.data[0]);

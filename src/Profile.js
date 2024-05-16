@@ -1,19 +1,20 @@
 // src/Profile.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import config from './config';
 
 const Profile = () => {
-    const [profile, setProfile] = useState({});
+  const [profile, setProfile] = useState({});
 
-    useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/profiles/')
-            .then(response => {
-                if (response.data.length > 0) {
-                    setProfile(response.data[0]);
-                }
-            })
-            .catch(error => console.error('There was an error fetching the profile!', error));
-    }, []);
+  useEffect(() => {
+    axios.get(`${config.API_BASE_URL}/profiles/`)
+      .then(response => {
+        if (response.data.length > 0) {
+          setProfile(response.data[0]);
+        }
+      })
+      .catch(error => console.error('There was an error fetching the profile!', error));
+  }, []);
 
     return (
         <div className="profile-section">

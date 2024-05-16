@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
+import config from './config';
 import './App.css';
 import './Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,7 +17,7 @@ function App() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/projects/')
+    axios.get(`${config.API_BASE_URL}/projects/`)
       .then(response => {
         setProjects(response.data);
       })
