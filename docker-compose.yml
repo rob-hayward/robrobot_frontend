@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   frontend:
     build:
@@ -6,3 +6,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
+    networks:
+      - robrobot_network
+
+networks:
+  robrobot_network:
+    external: true

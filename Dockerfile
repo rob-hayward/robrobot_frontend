@@ -13,19 +13,11 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Set the NODE_ENV environment variable to 'production'
-ENV NODE_ENV=production
-
 # Build the React application
 RUN npm run build
 
-# Use an official Nginx runtime as a parent image
+# Serve the application using a lightweight web server
 FROM nginx:stable-alpine
-
-# Copy Nginx configuration file
-COPY nginx.conf /etc/nginx/nginx.conf
-
-# Copy build files to the appropriate directory
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Expose port 80

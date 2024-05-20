@@ -13,6 +13,8 @@ import ProjectDetail from './ProjectDetail';
 import AboutContact from './AboutContact';
 import Footer from './Footer';
 
+console.log('API Base URL:', config.API_BASE_URL);  // Add this line to debug
+
 function App() {
   const [projects, setProjects] = useState([]);
 
