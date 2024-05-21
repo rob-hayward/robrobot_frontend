@@ -16,9 +16,14 @@ COPY . .
 # Build the React application
 RUN npm run build
 
-# Serve the application using a lightweight web server
+# Use an official Nginx runtime as a parent image
 FROM nginx:stable-alpine
+
+# Copy build files to the appropriate directory
 COPY --from=build /app/build /usr/share/nginx/html
+
+# Copy the nginx configuration file
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
