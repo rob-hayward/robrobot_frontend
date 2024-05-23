@@ -30,7 +30,7 @@ const ProjectDetail = ({ projects }) => {
   };
 
   if (!project) {
-    return <div>Project not found</div>;
+    return <div>Loading project...</div>;
   }
 
   return (
