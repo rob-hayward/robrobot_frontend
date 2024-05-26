@@ -78,3 +78,11 @@
 .contact-info {
     margin-top: 2em;
 }
+
+.profile-picture {
+    display: block; /* Adjust this based on your layout preference */
+    max-width: 15rem; /* Adjust the size as needed */
+    margin: 0 auto 2em; /* Center the image and add some margin below */
+    border-radius: 50%; /* Keeps the image circular, if it's not already */
+}
+

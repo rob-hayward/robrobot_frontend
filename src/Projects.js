@@ -31,62 +31,62 @@ const Projects = ({ projects }) => {
   };
 
   return (
-    <div>
-      {projects.map((project) => (
-        <div key={project.id} id={`project-${project.id}`} className="project-anchor">
-          <h1>{project.title}</h1>
-          <div className="project-images">
-            {project.images.map((image, index) => {
-              const imagePath = require(`./assets/images/${project.title.toLowerCase()}/${image.image.split('/').pop()}`);
-              return (
-                <img
-                  key={index}
-                  src={imagePath}
-                  alt={`${project.title} - ${index + 1}`}
-                  onClick={() => openImageModal(index, project)}
-                />
-              );
-            })}
-          </div>
-          <div className="project-section">
-            <p><strong>Overview:</strong></p>
-            <div dangerouslySetInnerHTML={{ __html: project.overview }} />
-            <p><strong>Key Features:</strong></p>
-            <div dangerouslySetInnerHTML={{ __html: project.key_features }} />
-            <p><strong>Technical Stack:</strong></p>
-            <div dangerouslySetInnerHTML={{ __html: project.technical_stack }} />
-            <p><strong>Role and Contribution:</strong></p>
-            <div dangerouslySetInnerHTML={{ __html: project.role_and_contribution }} />
-            <p><strong>Challenges and Solutions:</strong></p>
-            <div dangerouslySetInnerHTML={{ __html: project.challenges_solutions }} />
-            <p><strong>Future Plans:</strong></p>
-            <div dangerouslySetInnerHTML={{ __html: project.future_plans }} />
-            {project.web_link && (
-              <p>
-                <strong>Web Link:</strong> <a href={project.web_link}>{project.web_link}</a>
-              </p>
-            )}
-            {project.git_repo_links.map((repo, index) => (
-              <p key={index}>
-                <strong>Git Repository {index + 1}:</strong>{' '}
-                <a href={repo.url} target="_blank" rel="noopener noreferrer">
-                  {repo.name}
-                </a>
-              </p>
-            ))}
-          </div>
-        </div>
-      ))}
+      <div>
+        {projects.map((project) => (
+            <div key={project.id} id={`project-${project.id}`} className="project-anchor">
+              <h1>{project.title}</h1>
+              <div className="project-images">
+                {project.images.map((image, index) => {
+                  const imagePath = require(`./assets/images/${project.title.toLowerCase()}/${image.image.split('/').pop()}`);
+                  return (
+                      <img
+                          key={index}
+                          src={imagePath}
+                          alt={`${project.title} - ${index + 1}`}
+                          onClick={() => openImageModal(index, project)}
+                      />
+                  );
+                })}
+              </div>
+              <div className="project-section">
+                <p><strong>Overview:</strong></p>
+                <div dangerouslySetInnerHTML={{__html: project.overview}}/>
+                <p><strong>Key Features:</strong></p>
+                <div dangerouslySetInnerHTML={{__html: project.key_features}}/>
+                <p><strong>Technical Stack:</strong></p>
+                <div dangerouslySetInnerHTML={{__html: project.technical_stack}}/>
+                <p><strong>Role and Contribution:</strong></p>
+                <div dangerouslySetInnerHTML={{__html: project.role_and_contribution}}/>
+                <p><strong>Challenges and Solutions:</strong></p>
+                <div dangerouslySetInnerHTML={{__html: project.challenges_solutions}}/>
+                <p><strong>Future Plans:</strong></p>
+                <div dangerouslySetInnerHTML={{__html: project.future_plans}}/>
+                {project.web_link && (
+                    <p>
+                      <strong>Web Link:</strong> <a href={project.web_link}>{project.web_link}</a>
+                    </p>
+                )}
+                {project.git_repo_links.map((repo, index) => (
+                    <p key={index}>
+                      <strong>Git Repository {index + 1}:</strong>{' '}
+                      <a href={repo.url} target="_blank" rel="noopener noreferrer">
+                        {repo.name}
+                      </a>
+                    </p>
+                ))}
+              </div>
+            </div>
+        ))}
 
-      {selectedImageIndex !== null && currentProject && (
-        <ImageModal
-          imagePath={require(`./assets/images/${currentProject.title.toLowerCase()}/${currentProject.images[selectedImageIndex].image.split('/').pop()}`)}
-          onClose={closeImageModal}
-          onPrev={showPrevImage}
-          onNext={showNextImage}
-        />
-      )}
-    </div>
+        {selectedImageIndex !== null && currentProject && (
+            <ImageModal
+                imagePath={require(`./assets/images/${currentProject.title.toLowerCase()}/${currentProject.images[selectedImageIndex].image.split('/').pop()}`)}
+                onClose={closeImageModal}
+                onPrev={showPrevImage}
+                onNext={showNextImage}
+            />
+        )}
+      </div>
   );
 };
 

@@ -10,12 +10,10 @@ body {
   color: white;
 }
 
-.project-anchor:before {
-  content: '';
-  display: block;
-  height: 100px;
-  margin-top: -100px;
-  visibility: hidden;
+.container {
+  padding: 2rem 0;
+  background: rgb(30, 31, 34);
+  margin-bottom: 2rem;
 }
 
 .App {
@@ -23,60 +21,11 @@ body {
   color: white;
 }
 
-.container {
-  padding: 2rem 0;
-  background: rgb(30, 31, 34);
-  margin-bottom: 2rem;
-}
-
-.project-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.project-images img {
-  width: 260px;
-  height: auto;
-  margin: 0.5rem;
-  object-fit: cover;
-  border-radius: 0.25rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-}
-
-.project-section {
+.profile-section {
   text-align: left;
   margin-left: 1rem;
   margin-right: 1rem;
   color: white;
-}
-
-.project-section ul {
-  padding-left: 1.5rem;
-}
-
-.project-anchor {
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgb(180, 180, 180);
-  color: white;
-}
-
-.project-anchor h1 {
-  margin-top: 2rem;
-  color: white;
-}
-
-.project-section p {
-  margin-bottom: 0.5rem;
-  color: white;
-}
-
-.project-section p + div,
-.project-section p + ul {
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .image-modal {
@@ -149,77 +98,4 @@ body {
 
 .close-btn:hover {
   color: #007bff;
-}
-
-.profile-section {
-  text-align: left;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  color: white;
-}
-
-/* Project Grid Container */
-.project-grid-container {
-  max-width: 70em;
-  margin: 0 auto;
-  padding: 0 3em;
-}
-
-/* Project Grid */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
-  gap: 4em;
-  margin-top: -2em;
-}
-
-.project-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.project-image img {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.project-item:hover {
-  transform: scale(1.05);
-}
-
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.project-item:hover .project-overlay {
-  opacity: 1;
-}
-
-.project-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: white;
-}
-
-.project-description {
-  font-size: 16px;
-  text-align: center;
-  padding: 0 20px;
-  color: white;
 }

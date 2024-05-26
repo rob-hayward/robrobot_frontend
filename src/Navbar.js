@@ -8,6 +8,9 @@ const MyNavbar = ({ projects }) => {
   return (
     <Navbar expand="lg" fixed="top">
       <div className="navbar-content">
+        <div className="navbar-logo">
+          <img src={Logo} alt="Logo" />
+        </div>
         <Navbar.Brand as={Link} to="/" className="navbar-brand">
           <div className="navbar-name-wrapper">
             <span className="navbar-name">Rob Hayward</span>
@@ -17,9 +20,6 @@ const MyNavbar = ({ projects }) => {
             </span>
           </div>
         </Navbar.Brand>
-        <div className="navbar-logo">
-          <img src={Logo} alt="Logo" />
-        </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navbar-nav ml-auto">

@@ -28,7 +28,7 @@ const Intro = () => {
             <span className="relentless"> relentless</span> problem solving with an
           </p>
           <p>
-            <span className="make-it-work">"I can make this work"</span> mindset
+            <span className="make-it-work">"I can build it!"</span> mindset
           </p>
           <p>Bringing ideas to life with <span className="organised">organised</span> <span className="plus-sign"> +</span> <span className="efficient">efficient</span> code</p>
         </div>
