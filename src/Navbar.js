@@ -6,7 +6,7 @@ import Logo from './assets/robrobot_logo.png';
 
 const MyNavbar = ({ projects }) => {
   return (
-    <Navbar expand="lg" fixed="top">
+    <Navbar expand="lg" fixed="top" className="navbar-custom">
       <div className="navbar-content">
         <div className="navbar-logo">
           <img src={Logo} alt="Logo" />
@@ -20,7 +20,9 @@ const MyNavbar = ({ projects }) => {
             </span>
           </div>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggler">
+          <span className="navbar-toggler-icon"></span>
+        </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navbar-nav ml-auto">
             <Nav.Link as={Link} to="/" className="nav-link">home</Nav.Link>

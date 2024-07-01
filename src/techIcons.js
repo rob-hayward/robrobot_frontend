@@ -10,6 +10,8 @@ const techIconPaths = {
   d3js: 'd3js_icon.png',
   aws: 'aws_icon.png',
   docker: 'docker_icon.png',
+  github: 'github_icon.png',
+  google_cloud: 'google_cloud_icon.png',
   // Add more mappings as needed
 };
 

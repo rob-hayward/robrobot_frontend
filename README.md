@@ -10,6 +10,10 @@ On frontend, change API_URL in .env,
     REACT_APP_NODE_ENV=development # for development
     REACT_APP_NODE_ENV=production # for production
 
+On frontend, change email endpoint in contact.js,
+    const emailEndpoint = 'http://localhost:8080/email'; # for development
+    const emailEndpoint = 'http://robrobot-loadbalancer-980562543.eu-west-2.elb.amazonaws.com/email'; # for production
+
 On backend, change Debug in production.py,
     DEBUG = False # for production
     DEBUG = True # for development

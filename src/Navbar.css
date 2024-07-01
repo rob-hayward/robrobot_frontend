@@ -1,4 +1,5 @@
-.navbar {
+/* Default styling for the navbar */
+.navbar-custom {
   background-color: rgb(30, 31, 34);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 2em 0;
@@ -57,7 +58,7 @@
   justify-content: center;
   align-items: center;
   margin-left: 0em;
-    margin-top: 2.7em;
+  margin-top: 2.7em;
 }
 
 .navbar-logo img {
@@ -66,8 +67,6 @@
 
 .navbar-nav {
   margin-top: 6.3rem;
-  /*margin-left: auto;*/
-  /*margin-right: 0em;*/
   align-items: center;
 }
 
@@ -130,4 +129,147 @@
 .navbar-nav .nav-dropdown .dropdown-menu .dropdown-item:hover {
   color: rgb(197, 175, 122); /* Yellow color on hover */
   background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background color on hover */
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar-custom {
+    padding: 1em 0;
+  }
+
+  .navbar-name {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .navbar-subtitle {
+    font-size: 12px;
+  }
+
+  .navbar-content {
+    padding: 0 1em;
+  }
+
+  .navbar-nav {
+    margin-top: 1rem;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link,
+  .navbar-nav .nav-dropdown .dropdown-toggle {
+    font-size: 12px;
+    text-align: left;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .navbar-nav .nav-dropdown .dropdown-menu {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-dropdown .dropdown-menu .dropdown-item {
+    font-size: 12px;
+    right: 0;
+    left: auto;
+  }
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-dropdown .dropdown-toggle:hover,
+  .navbar-nav .nav-dropdown .dropdown-menu .dropdown-item:hover {
+    color: rgb(197, 175, 122); /* Yellow color on hover */
+  }
+
+  /* Custom styles for the navbar toggle button */
+  .navbar-toggler {
+    border: none; /* Remove the border */
+    padding: 0;
+  }
+
+  .navbar-toggler:focus,
+  .navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    display: inline-block;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    background-color: transparent; /* Ensure no background color */
+  }
+
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after,
+  .navbar-toggler-icon div,
+  .navbar-toggler-icon .middle1,
+  .navbar-toggler-icon .middle2,
+  .navbar-toggler-icon .middle3 {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(117, 163, 116); /* Green color for lines */
+    position: absolute;
+    transition: all 0.3s;
+  }
+
+  .navbar-toggler-icon::before {
+    top: 0;
+  }
+
+  .navbar-toggler-icon::after {
+    bottom: 0;
+  }
+
+  .navbar-toggler-icon .middle1 {
+    top: 6px;
+  }
+
+  .navbar-toggler-icon .middle2 {
+    top: 12px;
+  }
+
+  .navbar-toggler-icon .middle3 {
+    top: 18px;
+  }
+
+  .navbar-toggler:hover .navbar-toggler-icon::before,
+  .navbar-toggler:hover .navbar-toggler-icon::after,
+  .navbar-toggler:hover .navbar-toggler-icon .middle1,
+  .navbar-toggler:hover .navbar-toggler-icon .middle2,
+  .navbar-toggler:hover .navbar-toggler-icon .middle3,
+  .navbar-toggler:focus .navbar-toggler-icon::before,
+  .navbar-toggler:focus .navbar-toggler-icon::after,
+  .navbar-toggler:focus .navbar-toggler-icon .middle1,
+  .navbar-toggler:focus .navbar-toggler-icon .middle2,
+  .navbar-toggler:focus .navbar-toggler-icon .middle3,
+  .navbar-toggler:active .navbar-toggler-icon::before,
+  .navbar-toggler:active .navbar-toggler-icon::after,
+  .navbar-toggler:active .navbar-toggler-icon .middle1,
+  .navbar-toggler:active .navbar-toggler-icon .middle2,
+  .navbar-toggler:active .navbar-toggler-icon .middle3 {
+    background-color: rgb(197, 175, 122); /* Yellow color on hover/click */
+  }
+
+  /* Position dropdown menu to the left */
+  .navbar-nav .nav-dropdown .dropdown-menu {
+    right: auto;
+    left: 0;
+  }
+
+  /* Ensure the menu icon does not move */
+  .navbar-toggler.collapsed .navbar-toggler-icon div {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .navbar-toggler.collapsed .navbar-toggler-icon .middle1,
+  .navbar-toggler.collapsed .navbar-toggler-icon .middle2,
+  .navbar-toggler.collapsed .navbar-toggler-icon .middle3 {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }

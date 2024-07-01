@@ -23,6 +23,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2em;
+  padding-bottom: 2em;
 }
 
 .project-detail-image {
@@ -67,14 +68,3 @@
   color: rgb(197, 175, 122);
 }
 
-/*!* Add the following CSS rules to shift the rows *!*/
-
-/*.project-detail-grid > *:nth-child(4n + 1),*/
-/*.project-detail-grid > *:nth-child(4n + 2) {*/
-/*  transform: translateX(-1em);*/
-/*}*/
-
-/*.project-detail-grid > *:nth-child(4n + 3),*/
-/*.project-detail-grid > *:nth-child(4n + 4) {*/
-/*  transform: translateX(1em);*/
-/*}*/

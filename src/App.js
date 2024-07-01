@@ -1,10 +1,11 @@
-// App.js
+// src/App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import config from './config';
 import './App.css';
 import './Navbar.css';
+import CV from './CV';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyNavbar from './Navbar';
 import Intro from './Intro';
@@ -13,7 +14,7 @@ import ProjectDetail from './ProjectDetail';
 import AboutContact from './AboutContact';
 import Footer from './Footer';
 
-console.log('API Base URL:', config.API_BASE_URL);  // Add this line to debug
+console.log('API Base URL:', config.API_BASE_URL);
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -45,6 +46,7 @@ function App() {
             } />
             <Route path="/projects/:id" element={<ProjectDetail projects={projects} />} />
             <Route path="/about" element={<AboutContact />} />
+            <Route path="/cv" element={<CV />} />
           </Routes>
         </div>
         <Footer />

@@ -1,5 +1,5 @@
 // src/ProjectDetail.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ImageModal from './ImageModal';
 import './App.css';
@@ -8,6 +8,10 @@ import './ProjectDetail.css';
 const ProjectDetail = ({ projects }) => {
   const { id } = useParams();
   const project = projects.find((project) => project.id === parseInt(id));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
@@ -75,16 +79,17 @@ const ProjectDetail = ({ projects }) => {
             onClick={() => openImageModal(3)}
           />
           <div className="project-detail-section">
-            <p className="project-detail-subtitle">Challenges and Solutions</p>
-            <div dangerouslySetInnerHTML={{ __html: project.challenges_solutions }} />
+            <p className="project-detail-subtitle">Role and Contribution</p>
+            <div dangerouslySetInnerHTML={{__html: project.role_and_contribution}}/>
+
           </div>
         </div>
         <div className="project-detail-section">
-          <p className="project-detail-subtitle">Role and Contribution</p>
-          <div dangerouslySetInnerHTML={{ __html: project.role_and_contribution }} />
+          <p className="project-detail-subtitle">Challenges and Solutions</p>
+          <div dangerouslySetInnerHTML={{__html: project.challenges_solutions}}/>
         </div>
         <div className="project-detail-section">
-          <p className="project-detail-subtitle">Future Plans</p>
+        <p className="project-detail-subtitle">Future Plans</p>
           <div dangerouslySetInnerHTML={{ __html: project.future_plans }} />
         </div>
         <div className="project-detail-section git-repository-section">

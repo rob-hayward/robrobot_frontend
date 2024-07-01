@@ -1,0 +1,117 @@
+.cv-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.cv-content {
+  display: flex;
+  gap: 40px;
+}
+
+.cv-left-column {
+  flex: 1;
+  max-width: 30%;
+}
+
+.cv-right-column {
+  flex: 2;
+  max-width: 70%;
+}
+
+.cv-section {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Increased spacing for left column sections */
+.cv-left-column .cv-section {
+  margin-bottom: 40px;
+}
+
+.cv-section-title {
+  color: rgb(117, 163, 116);
+  border-bottom: 2px solid rgb(117, 163, 116);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Left column list styling */
+.cv-left-column .cv-section ul {
+  list-style-type: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+.cv-left-column .cv-section li {
+  margin-bottom: 15px; /* Increased spacing between list items */
+}
+
+/* Right column list styling */
+.cv-right-column .cv-section ul {
+  list-style-type: none;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.cv-right-column .cv-section li {
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.cv-right-column .cv-section li::before {
+  content: "•";
+  color: rgb(117, 163, 116);
+  position: absolute;
+  left: -20px;
+  top: 0;
+}
+
+.cv-date {
+  font-style: italic;
+  color: white;
+  margin-top: 0;
+}
+
+h4 {
+  margin-bottom: 5px;
+  color: white;
+  text-align: left;
+}
+
+p {
+  text-align: left;
+  color: white;
+}
+
+/* Increased spacing for left column paragraphs */
+.cv-left-column p {
+  margin-bottom: 30px;
+}
+
+.cv-download-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(117, 163, 116);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cv-download-link:hover {
+  background-color: rgb(117, 163, 116);
+}
+
+@media (max-width: 768px) {
+  .cv-content {
+    flex-direction: column;
+  }
+
+  .cv-left-column,
+  .cv-right-column {
+    max-width: 100%;
+  }
+}
