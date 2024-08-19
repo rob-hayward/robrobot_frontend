@@ -12,8 +12,12 @@ On frontend, change API_URL in .env,
 
 On frontend, change email endpoint in contact.js,
     const emailEndpoint = 'http://localhost:8080/email'; # for development
-    const emailEndpoint = 'http://robrobot-loadbalancer-980562543.eu-west-2.elb.amazonaws.com/email'; # for production
+    const endpoint = 'https://robhayward.io/api/send-email/'; # for production
 
 On backend, change Debug in production.py,
     DEBUG = False # for production
+    DEBUG = True # for development
+
+On backend, change Debug in settings.py,
+    DEBUG = os.getenv('DEBUG', 'False').lower() == 'true' # for production
     DEBUG = True # for development

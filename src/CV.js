@@ -26,6 +26,7 @@ const CV = () => {
               <li>HTML</li>
               <li>Bootstrap</li>
               <li>PostgreSQL</li>
+              <li>GitHub</li>
               <li>Docker</li>
               <li>AWS</li>
               <li>Communication skills</li>

@@ -30,7 +30,7 @@ const Intro = () => {
           <p>
             <span className="make-it-work">"I can build it!"</span> mindset
           </p>
-          <p>Bringing ideas to life with <span className="organised">organised</span> <span className="plus-sign"> +</span> <span className="efficient">efficient</span> code</p>
+          <p>bringing ideas to life with <span className="organised">organised</span> <span className="plus-sign"> +</span> <span className="efficient">efficient</span> code</p>
         </div>
       ) : (
         <p>Loading intro...</p>

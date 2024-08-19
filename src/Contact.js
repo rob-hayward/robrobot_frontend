@@ -15,7 +15,7 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // Update the endpoint to use your domain name
+        // const endpoint = 'http://localhost:8080/email';
         const endpoint = 'https://robhayward.io/api/send-email/';
         try {
             const response = await fetch(endpoint, {
