@@ -1,4 +1,6 @@
+// /Users/rob/PycharmProjects/robrobot_frontend/src/Contact.js
 import React, { useState } from 'react';
+import config from "./config";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -15,8 +17,7 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // const endpoint = 'http://localhost:8080/email';
-        const endpoint = 'https://robhayward.io/api/send-email/';
+        const endpoint = `${config.API_BASE_URL}/send-email/`;
         try {
             const response = await fetch(endpoint, {
                 method: 'POST',
@@ -29,7 +30,7 @@ const Contact = () => {
                 alert('Email sent successfully!');
                 setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' }); // Reset form
             } else {
-                const resText = await response.text();  // Getting text from the response body for more info
+                const resText = await response.text();
                 console.error('Failed to send email:', resText);
                 alert(`Failed to send email. Please try again. Error: ${resText}`);
             }
