@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import techIconPaths from './techIcons';
 import config from './config';
 import './ProjectGrid.css';
 
 const ProjectGrid = ({ projects }) => {
-  const getImageSrc = (imagePath) => {
+  const getImageSrc = (imagePath, isTechIcon = false) => {
     if (imagePath.startsWith('http') || imagePath.startsWith('/media/')) {
       // This is a media file from the backend
       return imagePath.startsWith('http') ? imagePath : `${config.API_BASE_URL}${imagePath}`;
+    } else if (isTechIcon) {
+      // This is a tech icon, use a direct path
+      return `/assets/images/tech_icons/${imagePath.toLowerCase().replace(/ /g, '_')}_icon.png`;
     } else {
       // This is a static file from the frontend
       try {
@@ -40,7 +42,7 @@ const ProjectGrid = ({ projects }) => {
                   <div className="technology-icons">
                     {project.technologies_used.map(tech => (
                       <img key={tech.name}
-                           src={getImageSrc(tech.icon)}
+                           src={getImageSrc(tech.name, true)}
                            alt={tech.name}
                       />
                     ))}
