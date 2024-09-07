@@ -5,12 +5,12 @@ import './ProjectGrid.css';
 
 const ProjectGrid = ({ projects }) => {
   const getImageSrc = (imagePath, isTechIcon = false) => {
-    if (imagePath.startsWith('http') || imagePath.startsWith('/media/')) {
+    if (imagePath.startsWith('http') || imagePath.startsWith('/')) {
       // This is a media file from the backend
       return imagePath.startsWith('http') ? imagePath : `${config.API_BASE_URL}${imagePath}`;
     } else if (isTechIcon) {
       // This is a tech icon, use the correct path
-      return `${config.API_BASE_URL}/static/technology_icons/${imagePath.toLowerCase().replace(/ /g, '_')}_icon.png`;
+      return `${config.API_BASE_URL}/technology_icons/${imagePath.toLowerCase().replace(/ /g, '_')}_icon.png`;
     } else {
       // This is a static file from the frontend
       try {
