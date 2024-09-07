@@ -9,8 +9,8 @@ const ProjectGrid = ({ projects }) => {
       // This is a media file from the backend
       return imagePath.startsWith('http') ? imagePath : `${config.API_BASE_URL}${imagePath}`;
     } else if (isTechIcon) {
-      // This is a tech icon, use a direct path
-      return `/assets/images/tech_icons/${imagePath.toLowerCase().replace(/ /g, '_')}_icon.png`;
+      // This is a tech icon, use the correct path
+      return `${config.API_BASE_URL}/static/technology_icons/${imagePath.toLowerCase().replace(/ /g, '_')}_icon.png`;
     } else {
       // This is a static file from the frontend
       try {
