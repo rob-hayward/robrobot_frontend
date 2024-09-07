@@ -1,24 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import config from './config';
 import './ProjectGrid.css';
 
 const ProjectGrid = ({ projects }) => {
-  const getImageSrc = (imagePath, isTechIcon = false) => {
-    if (imagePath.startsWith('http') || imagePath.startsWith('/')) {
-      // This is a media file from the backend
-      return imagePath.startsWith('http') ? imagePath : `${config.API_BASE_URL}${imagePath}`;
-    } else if (isTechIcon) {
-      // This is a tech icon, use the correct path
-      return `${config.API_BASE_URL}/technology_icons/${imagePath.toLowerCase().replace(/ /g, '_')}_icon.png`;
-    } else {
-      // This is a static file from the frontend
-      try {
-        return require(`./assets/images/${imagePath}`);
-      } catch {
-        console.error(`Failed to load image: ${imagePath}`);
-        return ''; // or a placeholder image URL
-      }
+  const getImageSrc = (project, imagePath) => {
+    try {
+      return require(`./assets/images/${project.title.toLowerCase()}/${imagePath.split('/').pop()}`);
+    } catch (error) {
+      console.error(`Failed to load image: ${imagePath}`, error);
+      return ''; // or a placeholder image URL
+    }
+  };
+
+  const getTechIconSrc = (techName) => {
+    try {
+      return require(`./assets/images/tech_icons/${techName.toLowerCase().replace(/ /g, '_')}_icon.png`);
+    } catch (error) {
+      console.error(`Failed to load tech icon: ${techName}`, error);
+      return ''; // or a placeholder icon URL
     }
   };
 
@@ -33,7 +32,7 @@ const ProjectGrid = ({ projects }) => {
             <Link to={`/projects/${project.id}`}>
               <div className="project-image">
                 <img
-                  src={getImageSrc(project.images[0].image)}
+                  src={getImageSrc(project, project.images[0].image)}
                   alt={project.title}
                 />
                 <div className="project-overlay">
@@ -41,9 +40,10 @@ const ProjectGrid = ({ projects }) => {
                   <div className="project-description">{project.synopsis}</div>
                   <div className="technology-icons">
                     {project.technologies_used.map(tech => (
-                      <img key={tech.name}
-                           src={getImageSrc(tech.name, true)}
-                           alt={tech.name}
+                      <img
+                        key={tech.name}
+                        src={getTechIconSrc(tech.name)}
+                        alt={tech.name}
                       />
                     ))}
                   </div>
