@@ -19,13 +19,19 @@ const CV = () => {
             <h3 className="cv-section-title">Skills</h3>
             <ul>
               <li>Python</li>
+              <li>TypeScript</li>
               <li>JavaScript</li>
               <li>Django</li>
+              <li>FastAPI</li>
+              <li>Node.js</li>
+              <li>AI</li>
+              <li>Hugging Face</li>
               <li>React</li>
               <li>CSS</li>
               <li>HTML</li>
               <li>Bootstrap</li>
               <li>PostgreSQL</li>
+              <li>Neo4j</li>
               <li>GitHub</li>
               <li>Docker</li>
               <li>AWS</li>

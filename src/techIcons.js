@@ -12,6 +12,13 @@ const techIconPaths = {
   docker: 'docker_icon.png',
   github: 'github_icon.png',
   google_cloud: 'google_cloud_icon.png',
+  hugging_face: 'hugging_face_icon.png',
+  fast_api: 'fastapi_icon.png',
+  keybert: 'keybert_icon.png',
+  nodejs: 'node_js_icon.png',
+  neo4j: 'neo4j_icon.png',
+  typescript: 'typescript_icon.png',
+  auth0: 'auth0_icon.png',
   // Add more mappings as needed
 };
 
